@@ -196,7 +196,3 @@ int FclCmpCStr(void *a, char *b){
     FclString *r = asType(a, STRING);
     return strncmp(r->chars->data, b, max(r->chars->length, strlen(b)));
 }
-
-struct cell *Cond;
-struct cell *True;
-struct cell *False;
