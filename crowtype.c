@@ -93,32 +93,6 @@ void fcl_destroy(FclBaseIfc *_s, enum value_types t){
     }
 }
 
-struct visual {
-    int indent;
-};
-struct visual *v;
-
-struct cell {
-    FclBaseType base;
-    int id;
-    bool closed;
-    bool is_branch;
-    bool swapped;
-    int cell_type;
-    struct value *value;
-    struct cell *tail;
-    struct cell *branch;
-    struct fcl_string *name;
-    /* ctx based fields */
-    struct cell *define;
-    struct cell *reg;
-    struct store *scope;
-    struct cell *(*call)(struct cell *ctx, struct cell *c, struct value *v);
-    int argi;
-    struct cell *arg_expect; 
-};
-int cell_next_id = 1;
-
 typedef struct value {
     FclBaseType base;
 } FclValue;
